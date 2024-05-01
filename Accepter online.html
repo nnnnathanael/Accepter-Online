@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Number Accepter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Input Scientific Number:</h2>
+    <input type="text" id="scientificInput">
+    <br>
+    <button onclick="processScientificNumber()">Accept</button>
+    <br>
+    <p id="result"></p>
+    
+    <script>
+        function processScientificNumber() {
+            var input = document.getElementById("scientificInput").value;
+            var number = parseFloat(input);
+            document.getElementById("result").innerText = isNaN(number) ? "Invalid input! Please enter a valid scientific number." : "Accepted Number: " + number;
+        }
+    </script>
+</body>
+</html>
